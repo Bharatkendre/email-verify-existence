@@ -1,0 +1,29 @@
+{
+  "name": "email-verify-existence",
+  "version": "1.0.0",
+  "description": "Check Email Existence: Verify if an email address exists or not. Retrieve detailed existence status.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bharatkendre/email-verify-existence.git"
+  },
+  "keywords": [
+    "email verify",
+    "email validation",
+    "smtp check"
+  ],
+  "author": "Bharat Kendre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bharatkendre/email-verify-existence/issues"
+  },
+  "homepage": "https://github.com/Bharatkendre/email-verify-existence#readme",
+  "dependencies": {
+    "does-email-exist": "^0.2.0",
+    "free-email-domains": "^1.2.13",
+    "node-fetch": "^2.6.12"
+  }
+}
