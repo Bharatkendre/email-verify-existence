@@ -5,7 +5,14 @@ const { freeCheck } = require('./freeProvider');
 const { smtpCheck } = require('./smtp_check');
 
 
-async function performEmailCheck(email) {
+/**
+ * 
+ * @param {*} email 
+ * @param {*} timeout 
+ * @returns object
+ * 
+ */
+async function performEmailCheck(email, timeout) {
 
     try {
         if (!(email && email.includes('@'))) {
@@ -14,7 +21,7 @@ async function performEmailCheck(email) {
 
         const [, emailDomain] = email.split('@');
 
-        const smtpCheckPromise = smtpCheck(email);
+        const smtpCheckPromise = smtpCheck(email, timeout);
         const freeCheckPromise = freeCheck(emailDomain);
         const dnsAndMxCheckPromise = dnsAndMxCheck(emailDomain);
         const disposableCheckPromise = disposableCheck(emailDomain);

@@ -3,15 +3,20 @@ const { check } = require('does-email-exist')
 
 /**
  * 
- * @param {*} emailOrEmailOptions 
+ * @param {*} emailOrEmailOptions
+ * @param {*} timeout Default 5 sec
  * @returns Promise<{ smtp_check, mx_check, format_check}>
  * @description Performs smtp check and returns the check details
  * 
  */
-async function smtpCheck(emailOrEmailOptions) {
+async function smtpCheck(emailOrEmailOptions, timeout = 5000) {
 
     try {
-        const res = await check(emailOrEmailOptions);
+
+        const res = await Promise.race([
+            check(emailOrEmailOptions),
+            new Promise((resolve, reject) => setTimeout(() => reject(new Error("Timeout")), timeout))
+        ])
 
         return {
             smtp_check: {

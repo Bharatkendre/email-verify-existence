@@ -15,7 +15,7 @@ async function catchAllCheck(email) {
 
         const randomEmail = emailUser + generateRandomString(8) + '@' + domain;
 
-        const res = await smtpCheck(randomEmail);
+        const res = await smtpCheck(randomEmail, 2000);
 
         return {
             catch_all_check: {
