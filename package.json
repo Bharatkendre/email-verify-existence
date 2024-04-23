@@ -1,6 +1,6 @@
 {
   "name": "email-verify-existence",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Check Email Existence: Verify if an email address exists or not. Retrieve detailed existence status.",
   "main": "index.js",
   "scripts": {
