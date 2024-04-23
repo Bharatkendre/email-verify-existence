@@ -36,7 +36,7 @@ async function dnsAndMxCheck(domain) {
             },
             mx_records: mxRecords
         };
-    } catch (err) {
+    } catch (error) {
         console.error(`Error retrieving MX records. Error : ${error.stack}`);
         return {
             dns_check: {
