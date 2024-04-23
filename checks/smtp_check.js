@@ -13,7 +13,7 @@ async function smtpCheck(emailOrEmailOptions, timeout = 5000) {
 
     try {
 
-        const res = check(emailOrEmailOptions, timeout);
+        const res = await check(emailOrEmailOptions, timeout);
 
         return {
             smtp_check: {
