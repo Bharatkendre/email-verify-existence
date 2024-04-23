@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/Bharatkendre/email-verify-existence#readme",
   "dependencies": {
-    "does-email-exist": "^0.2.0",
     "free-email-domains": "^1.2.13",
+    "mail-exists": "^1.0.1",
     "node-fetch": "^2.6.12"
   }
 }

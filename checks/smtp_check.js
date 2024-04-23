@@ -1,4 +1,4 @@
-const { check } = require('does-email-exist')
+const { check } = require('mail-exists')
 
 
 /**
@@ -13,10 +13,7 @@ async function smtpCheck(emailOrEmailOptions, timeout = 5000) {
 
     try {
 
-        const res = await Promise.race([
-            check(emailOrEmailOptions),
-            new Promise((resolve, reject) => setTimeout(() => reject(new Error("Timeout")), timeout))
-        ])
+        const res = check(emailOrEmailOptions, timeout);
 
         return {
             smtp_check: {
